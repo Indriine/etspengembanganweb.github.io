@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pariwisata Indonesia</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Destinasi Wisata Populer di Indonesia</h1>
+    </header>
+
+    <section>
+        <h2>Form Pendaftaran</h2>
+        <form id="registrationForm" onsubmit="return validateForm()">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name"><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br>
+            
+            <label for="destination">Destinasi Favorit:</label>
+            <input type="text" id="destination" name="destination"><br>
+            
+            <button type="submit">Daftar</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Destinasi Populer</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Lokasi</th>
+                    <th>Deskripsi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Borobudur</td>
+                    <td>Jawa Tengah</td>
+                    <td>Candi terbesar di Indonesia dengan sejarah yang kaya.</td>
+                </tr>
+                <tr>
+                    <td>Danau Kelimutu</td>
+                    <td>Ende</td>
+                    <td>Danau kawah di puncak Gunung Kelimutu, yang terkenal dengan tiga danaunya yang unik dan memiliki warna berbeda.</td>
+                </tr>
+                <tr>
+                    <td>Raja Ampat</td>
+                    <td>Papua Barat</td>
+                    <td>Kepulauan dengan keindahan bawah laut yang luar biasa.</td>
+                </tr>
+                <tr>
+                    <td>Gunung Bromo</td>
+                    <td>Jawa Timur</td>
+                    <td>Gunung berapi dengan pemandangan sunrise yang menakjubkan.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Galeri Foto</h2>
+
+        <figure>
+        <figcaption><strong>Borobudur</strong></figcaption>
+        <img src="{{ url_for('static', filename='Borobudur.jpeg') }}" alt="Borobudur" width="300">
+        </figure>
+
+        <figure>
+        <figcaption><strong>Danau Kelimutu</strong></figcaption>
+        <img src="{{ url_for('static', filename='Danau Kelimutu.jpeg')}}" alt="Danau Kelimutu" width="300">
+        </figure>
+
+        <figure>
+        <figcaption><strong>Raja Ampat</strong></figcaption>
+        <img src="{{ url_for('static', filename='Raja Ampat.jpeg')}}" alt="Raja Ampat" width="300">
+        </figure>
+        
+
+        <figure>
+        <figcaption><strong>Gunung Bromo</strong></figcaption>
+        <img src="{{ url_for('static', filename='Gunung Bromo.jpeg')}}" alt="Gunung Bromo" width="300">
+        </figure>
+    </section>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            if (name === "" || email === "") {
+                alert("Nama dan Email wajib diisi!");
+                return false;
+            }
+            alert("Form berhasil dikirim!");
+            return true;
+        }
+    </script>
+</body>
+</html>
